@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+// import 'package:myapp/column_widget.dart';
+// import 'package:myapp/row_widget.dart';
+import 'package:myapp/ basic_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -7,27 +10,15 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Praktikum Mobile Lanjut',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Praktikum Mobile Lanjut'),
-        ),
-        body: const Center(
-          
-          child: Text(
-            'Halo nama saya rizky firmansyah npm 2357051016',
-            textAlign: TextAlign.center,
-            
-          ),
-        ),
-      )
+     home: const RowWidget(),
     );
   }
 }
