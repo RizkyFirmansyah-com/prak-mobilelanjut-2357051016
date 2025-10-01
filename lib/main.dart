@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'screens/login_screen.dart';
 import 'screens/signup_screen.dart';
-
+import 'screens/dashboard_screen.dart';
 void main() => runApp(const JustduitApp());
 
 class JustduitApp extends StatelessWidget {
@@ -37,10 +37,11 @@ class JustduitApp extends StatelessWidget {
         ), // InputDecorationTheme
       ), // ThemeData
       initialRoute: LoginScreen.route,
-      routes: {
-        '/': (context) => const LoginScreen(), // default = Sign In
-        '/signin': (context) => const LoginScreen(),
-        '/signup': (context) => const SignupScreen(),
+      routes: { 
+        LoginScreen.route: (context) => const LoginScreen(),
+        SignupScreen.route: (context) => const SignupScreen(),
+        DashboardScreen.route: (context) => const DashboardScreen(),
+
       },
     );
   }
