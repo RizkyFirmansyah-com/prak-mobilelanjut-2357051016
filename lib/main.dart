@@ -1,33 +1,48 @@
 import 'package:flutter/material.dart';
+import 'screens/login_screen.dart';
+import 'screens/signup_screen.dart';
+import 'screens/dashboard_screen.dart';
+void main() => runApp(const JustduitApp());
 
-void main() {
-  runApp(const MyApp());
-}
+class JustduitApp extends StatelessWidget {
+  const JustduitApp({super.key});
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'Justduit',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Praktikum Mobile Lanjut'),
-        ),
-        body: const Center(
-          
-          child: Text(
-            'Halo nama saya rizky firmansyah npm 2357051016',
-            textAlign: TextAlign.center,
-            
-          ),
-        ),
-      )
+        scaffoldBackgroundColor: const Color(0xFFF3F6F8), // abu-abu muda
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF1E88FF)),
+        inputDecorationTheme: InputDecorationTheme(
+          isDense: true,
+          filled: true,
+          fillColor: Colors.white,
+          contentPadding:
+              const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: const BorderSide(color: Color(0xFFE0E0E0)),
+          ), // OutlineInputBorder
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: const BorderSide(color: Color(0xFFE0E0E0)),
+          ), // OutlineInputBorder
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: const BorderSide(color: Color(0xFF1E88FF)),
+          ), // OutlineInputBorder
+        ), // InputDecorationTheme
+      ), // ThemeData
+      initialRoute: LoginScreen.route,
+      routes: { 
+        LoginScreen.route: (context) => const LoginScreen(),
+        SignupScreen.route: (context) => const SignupScreen(),
+        DashboardScreen.route: (context) => const DashboardScreen(),
+
+      },
     );
   }
 }
